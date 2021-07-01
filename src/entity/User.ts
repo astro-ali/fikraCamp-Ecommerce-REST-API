@@ -5,13 +5,14 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
   OneToMany,
+  BaseEntity,
 } from "typeorm";
 
 import { Order } from "./Order";
 import { Review } from "./Review";
 
 @Entity()
-export class User {
+export class User extends BaseEntity {
   @PrimaryGeneratedColumn("uuid")
   id: number;
 
@@ -30,7 +31,7 @@ export class User {
   @Column()
   otp: number;
 
-  @Column()
+  @Column({ default: false })
   isBuyer: boolean;
 
   @Column()
