@@ -5,6 +5,4 @@ build/
 tmp/
 temp/
 .env
-env
-/env
 test.ts
