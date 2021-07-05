@@ -29,7 +29,11 @@ const okRes = (res, data, code = 200) => {
   if (typeof code !== "undefined") res.statusCode = code;
   return res.json(sendData);
 };
-
+// will generate you an otp number.
 const getOtp = () => Math.floor(1000 + Math.random() * 9000);
 
-export { okRes, errRes, getOtp };
+const isNotANumber = (x: any) => {
+  return x !== x;
+} 
+
+export { okRes, errRes, getOtp, isNotANumber };

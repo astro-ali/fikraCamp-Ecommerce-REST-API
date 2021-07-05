@@ -19,4 +19,55 @@ export default class Validate {
       type: "string",
     },
   });
+
+  static login = (must = true) => ({
+    phone: {
+      presence: must,
+      type: "string",
+    },
+    password: {
+      presence: must,
+      type: "string",
+    },
+  });
+  static rest = (must = true) => ({
+    password: {
+      presence: must,
+      type: "string",
+    },
+    new_password: {
+      presence: must,
+      type: "string",
+    },
+  });
+
+  static phone = (must = true) => ({
+    phone: {
+      presence: must,
+      type: "string",
+    }
+  });
+  static otp = (must = true) => ({
+    otp: {
+      presence: must,
+      type: "string",
+    },
+  });
+  static password = (must = true) => ({
+    password: {
+      presence: must,
+      type: "string",
+    },
+  });
+  static query = (must = true) => ({
+    page: {
+      presence: false,
+      type: "number"
+    },
+    perPage: {
+      presence: false,
+      type: "number"
+    }
+  });
+
 }

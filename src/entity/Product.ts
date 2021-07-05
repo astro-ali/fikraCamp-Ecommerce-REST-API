@@ -47,7 +47,7 @@ export class Product {
   @Column({ default: 0 })
   warranty: number;
 
-  @Column()
+  @Column({ default: true })
   active: boolean;
 
   @CreateDateColumn()

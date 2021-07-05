@@ -1,10 +1,10 @@
 {
    "type": "postgres",
-   "host": "batyr.db.elephantsql.com",
+   "host": "localhost",
    "port": 5432,
-   "username": "aqoggvct",
-   "password": "elnqDjt4KxyGyEIz82UtTUrZ4uJHhfNL",
-   "database": "aqoggvct",
+   "username": "postgres",
+   "password":"1968",
+   "database": "ali",
    "synchronize": true,
    "logging": false,
    "entities": [

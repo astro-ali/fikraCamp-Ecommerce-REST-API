@@ -16,6 +16,8 @@ export default async (req, res, next) => {
     let user = await User.findOne(payload.id);
     // check user isVerified
     if (!user.isVerified) return errRes(res, `Please verify your account`);
+    if (!user.active) return errRes(res, `${user.phone} is banned.`);
+    // ????
     req.user = user;
     // next
     return next();

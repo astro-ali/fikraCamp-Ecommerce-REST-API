@@ -12,6 +12,4 @@ route.put("/users/:id", UserController.edit);
 // delete user
 route.delete("/users/:id", UserController.delete);
 
-// get one
-
 export default route;

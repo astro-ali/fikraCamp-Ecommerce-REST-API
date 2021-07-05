@@ -1,5 +1,6 @@
 require("dotenv").config();
 
 export default {
-  jwtUserSecret: process.env.JWT_USER_SECRET || "shhh",
+  jwtUserSecret: process.env.JWT_USER_SECRET || "sheeeeeesh",
+  jwtOtpSecret: process.env.JWT_OTP_SECRET || "looooooool",
 };
