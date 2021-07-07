@@ -5,11 +5,12 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
   OneToMany,
+  BaseEntity,
 } from "typeorm";
 import { SubCategory } from "./SubCategory";
 
 @Entity()
-export class Category {
+export class Category extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -19,7 +20,7 @@ export class Category {
   @Column({ unique: true })
   nameAr: string;
 
-  @Column()
+  @Column({ default: true })
   active: boolean;
 
   @CreateDateColumn()
@@ -28,8 +29,7 @@ export class Category {
   @UpdateDateColumn()
   updatedAt: Date;
 
-  //
-
+  // relation with sub categories.
   @OneToMany((type) => SubCategory, (subCategory) => subCategory.category)
   subcategories: SubCategory[];
 }

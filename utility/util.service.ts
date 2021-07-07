@@ -1,8 +1,10 @@
+import { Response } from "express";
+
 /**
  * ReE
  * @param body
  */
-const errRes = (res, err, code = 400, key = "err") => {
+const errRes = (res: Response, err, code = 400, key = "err") => {
   if (typeof err == "object" && typeof err.message != "undefined") {
     err = err.message;
   } else if (typeof err == "string") {

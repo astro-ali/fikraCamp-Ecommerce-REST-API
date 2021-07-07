@@ -16,13 +16,13 @@ route.post("/otp", otp, UserController.checkOtp);
 route.get("/login", UserController.login);
 
 //forget password and get the number first
-route.get("/forget",UserController.forgetPassword);
+route.post("/forget/number",UserController.forgetPassword);
 
 // get the otp
-route.post("/forget", UserController.getForgetPasswordOtp);
+route.post("/forget/otp", UserController.getForgetPasswordOtp);
 
 // set the new password
-route.put("/forget", auth, UserController.setNewPassword);
+route.post("/forget/newPassword", auth, UserController.setNewPassword);
 
 // check if the user is logged in by check the token.
 // every thing after this, the user should carray his token.

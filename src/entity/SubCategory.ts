@@ -21,7 +21,7 @@ export class SubCategory {
   @Column({ unique: true })
   nameAr: string;
 
-  @Column()
+  @Column({ default: true })
   active: boolean;
 
   @CreateDateColumn()
@@ -29,9 +29,6 @@ export class SubCategory {
 
   @UpdateDateColumn()
   updatedAt: Date;
-
-  // Relations
-  // categoryId TODO:
 
   // sub => many
   // cat => one

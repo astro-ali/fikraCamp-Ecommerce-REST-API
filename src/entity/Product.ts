@@ -60,6 +60,7 @@ export class Product {
   //   subCategoryId
   //   brandId
 
+  // subcat -> one & product -> many
   @ManyToOne((type) => SubCategory, (subcategory) => subcategory.products)
   subcategory: SubCategory;
 
@@ -69,6 +70,7 @@ export class Product {
   @OneToMany((type) => OrderItem, (item) => item.product)
   items: OrderItem[];
 
+  // product -> one & review -> many
   @OneToMany((type) => Review, (review) => review.product)
   reviews: Review[];
 }

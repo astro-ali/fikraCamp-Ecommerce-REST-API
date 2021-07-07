@@ -69,5 +69,15 @@ export default class Validate {
       type: "number"
     }
   });
+  static category = (must = true) => ({
+    name: {
+      presence: must,
+      type: "string"
+    },
+    nameAr: {
+      presence: must,
+      type: "string"
+    }
+  });
 
 }

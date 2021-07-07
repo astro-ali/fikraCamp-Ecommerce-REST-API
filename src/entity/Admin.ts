@@ -24,7 +24,7 @@ export class Admin extends BaseEntity {
   @Column()
   isSuper: boolean;
 
-  @Column()
+  @Column({ default: true })
   active: boolean;
 
   @CreateDateColumn()

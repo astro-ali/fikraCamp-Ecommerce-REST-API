@@ -19,7 +19,7 @@ export class Brand {
   @Column({ unique: true })
   nameAr: string;
 
-  @Column()
+  @Column({ default: true })
   active: boolean;
 
   @CreateDateColumn()

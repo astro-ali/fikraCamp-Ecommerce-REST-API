@@ -6,6 +6,7 @@ import Validator from "../../../utility/validation";
 import * as validate from "validate.js";
 
 export default class UserController {
+
   /**
    *
    * @param req
@@ -72,6 +73,8 @@ export default class UserController {
     });
   }
 
+
+
   /**
    *
    * @param req
@@ -98,6 +101,7 @@ export default class UserController {
     return okRes(res, { user })
   }
 
+
   /**
    *
    * @param req
@@ -116,20 +120,21 @@ export default class UserController {
     } catch (error) {
       return res.json(error);
     }
-    return res.json(user);
+    
+    return okRes(res, { user });
   }
 
 
-    /**
-   *
-   * @param req
-   * @param res
-   * @returns
-   */
+     /**
+     *
+     * @param req
+     * @param res
+     * @returns
+     */
      static async delete(req: Request, res: Response): Promise<object> {
         const id = req.params.id;
         let user;
-
+        // delete the user by deative it.
         try {
           user = await User.findOne(id);
           if (!user) return res.json("not found");
@@ -138,6 +143,7 @@ export default class UserController {
         } catch (error) {
           return res.json(error);
         }
-        return res.json(user);
+
+        return okRes(res, { user });
       }
 }
