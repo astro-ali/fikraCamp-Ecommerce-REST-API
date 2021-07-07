@@ -1,4 +1,5 @@
 import * as express from "express";
+import * as corn from "node-cron";
 import CategoryController from "../../controllers/dash/v1/category.controller";
 import UserController from "../../controllers/dash/v1/user.controller";
 const route = express.Router();
@@ -21,5 +22,10 @@ route.post("/categories", CategoryController.add);
 route.put("/categories/:id", CategoryController.edit);
 // delete category
 route.delete("/categories/:id", CategoryController.delete);
+
+// test job
+route.get("/test", UserController.testJob);
+//delete all users
+route.get("/delete",UserController.deleteAllUsers);
 
 export default route;
