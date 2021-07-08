@@ -1,5 +1,4 @@
 import * as express from "express";
-import * as corn from "node-cron";
 import CategoryController from "../../controllers/dash/v1/category.controller";
 import UserController from "../../controllers/dash/v1/user.controller";
 const route = express.Router();

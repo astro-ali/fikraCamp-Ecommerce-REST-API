@@ -24,7 +24,7 @@ export default class UserController {
     let perPage: any = query.perPage;
 
     // get all the users form DB
-    const users = await User.find({ where: { active: true } });
+    const users = await User.find();
 
     // check if the query is empty and if it ture retuen all users
     if(isEmpty(query)) return okRes(res, { users });

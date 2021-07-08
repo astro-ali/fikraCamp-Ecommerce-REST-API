@@ -113,7 +113,7 @@ export default class UserController {
     if (!phoneObj.isNumber)
       return errRes(res, `Phone ${body.phone} is not a valid phone number`);
     
-    // body.phone = phoneObj.globalP;
+    body.phone = phoneObj.globalP;
     let phone = phoneObj.globalP;
     // get user from db by phone + isVerified
     let user;
@@ -250,6 +250,13 @@ export default class UserController {
     // reurn the login token
     return okRes(res, { token });
   }
+
+  /**
+   * 
+   * @param req 
+   * @param res 
+   * @returns 
+   */
   static async setNewPassword(req, res): Promise<object> {
     // get the body
     let body = req.body;

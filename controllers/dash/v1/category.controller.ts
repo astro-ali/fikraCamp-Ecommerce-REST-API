@@ -1,5 +1,4 @@
 import { Request, Response } from "express";
-import { BlockList } from "net";
 import validate = require("validate.js");
 import { Category } from "../../../src/entity/Category";
 import { errRes, okRes } from "../../../utility/util.service";
